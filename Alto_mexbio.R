@@ -38,10 +38,10 @@ alto.mexbio.estables45<-rbind(GP_estables45.mexbio,DAN_estables45.mexbio,
                          CM_estables45.mexbio,ESM_estables45.mexbio,
                          ST_estables45.mexbio,SCS_estables45.mexbio,
                          SCH_estables45.mexbio)
-write.csv(alto.mexbio.estables45, "alto_mexbio_estables45.csv")
+write.csv(alto.mexbio.estables45, "alto_mexbio_CNRMCM5_rcp45_2015_2039_bio_stables45.csv")
 
 alto.mexbio.cambio45<-rbind(GP_cambio45.mexbio,DAN_cambio45.mexbio,
                        CM_cambio45.mexbio,ESM_cambio45.mexbio,
                        ST_cambio45.mexbio,SCS_cambio45.mexbio,
                        SCH_cambio45.mexbio)
-write.csv(alto.mexbio.cambio45, "alto_mexbio_cambio45.csv")
+write.csv(alto.mexbio.cambio45, "alto_mexbio_CNRMCM5_rcp45_2015_2039_bio_cambio45.csv")

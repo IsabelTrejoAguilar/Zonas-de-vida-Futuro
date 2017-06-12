@@ -52,10 +52,10 @@ bajo.mexbio.estables45<-rbind(GP_estables45.mexbio,DAN_estables45.mexbio,
                          CM_estables45.mexbio,ESM_estables45.mexbio,
                          ST_estables45.mexbio,SCS_estables45.mexbio,
                          SCH_estables45.mexbio)
-write.csv(bajo.mexbio.estables45, "bajo_mexbio_estables45.csv")
+write.csv(bajo.mexbio.estables45, "bajo_mexbio_CNRMCM5_rcp45_2015_2039_bio_estables45.csv")
 
 bajo.mexbio.cambio45<-rbind(GP_cambio45.mexbio,DAN_cambio45.mexbio,
                        CM_cambio45.mexbio,ESM_cambio45.mexbio,
                        ST_cambio45.mexbio,SCS_cambio45.mexbio,
                        SCH_cambio45.mexbio)
-write.csv(bajo.mexbio.cambio45, "bajo_mexbio_cambio45.csv")
+write.csv(bajo.mexbio.cambio45, "bajo_mexbio_CNRMCM5_rcp45_2015_2039_bio_cambio45.csv")
