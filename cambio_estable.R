@@ -92,20 +92,20 @@ m_final85<-rename(m_final85, c(m_final.LatReg_P...m_final.LatReg_85="Lat.vec85",
 #Identificar zonas de clima estable (suma.vec45 = 0)
 estables45 <-subset(m_final45, suma.vec45 == 0)
 estables45 <-estables45[,1:7]
-write.csv(estables45,"CNRMCM5_rcp45_2015_2039_bio_estables45.csv")
+write.csv(estables45,"Resample/CNRMCM5_rcp45_2015_2039_bio/estables45.csv")
 estables85 <-subset(m_final85, suma.vec85 == 0) 
 estables85 <-estables85[,1:7]
-write.csv(estables45,"CNRMCM5_rcp85_2015_2039_bio_estables85.csv")
+write.csv(estables45,"Resample/CNRMCM5_rcp45_2015_2039_bio/estables85.csv")
 
 #Identificar zonas de clima que cambian (suma.vec45 != 0)
 cambio45 <-subset(m_final45, suma.vec45 != 0)
 cambio.45select<-c("x","y","MEXBIO_2010_gw_pr","zvh","zvhrcp45",
                   "ecoregiones","Lat.vec45","Ppt.vec45","Phum45.vec","suma.vec45")
 cambio45<-cambio45[cambio.45select]
-write.csv(cambio45,"CNRMCM5_rcp45_2015_2039_bio_cambio45.csv")
+write.csv(cambio45,"Resample/CNRMCM5_rcp45_2015_2039_bio/cambio45.csv")
 
 cambio85 <-subset(m_final85, suma.vec85 != 0) 
 cambio.85select<-c("x","y","MEXBIO_2010_gw_pr","zvh","zvhrcp85",
                    "ecoregiones","Lat.vec85","Ppt.vec85","Phum85.vec","suma.vec85")
 cambio85<-cambio85[cambio.85select]
-write.csv(cambio85,"CNRMCM5_rcp85_2015_2039_bio_cambio85.csv")
+write.csv(cambio85,"Resample/CNRMCM5_rcp45_2015_2039_bio/cambio85.csv")
