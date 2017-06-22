@@ -49,3 +49,7 @@ Source: CRAN
 Version: 1.2-4
 Hash: 4ffcf86fffee89e7b859f760528dd545
 
+Package: rgeos
+Source: CRAN
+Version: 0.3-19
+Hash: 17edc286908bc8b49130130c6849b5c0
