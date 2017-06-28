@@ -11,8 +11,8 @@ setwd("C:/CONABIO/CLIMA/LifeZones/LZ_R_uniatmos/")
 #Importat raster de las zonas de vida de cada tiempo
 #### Preparacion de matrices ####
 #llamar raster de las zonas de vida de cada tiempo y mexbio
-zvrcp45 <- raster("C:/CONABIO/CLIMA/LifeZones/LZ_R_uniatmos/Resample/CNRMCM5_rcp45_2015_2039_bio/zvhrcp45.tif")
-zvrcp85 <- raster("C:/CONABIO/CLIMA/LifeZones/LZ_R_uniatmos/Resample/CNRMCM5_rcp85_2015_2039_bio/zvhrcp85.tif")
+zvrcp45 <- raster("C:/CONABIO/CLIMA/LifeZones/LZ_R_uniatmos/Resample/HAD_ESM_LR_rcp45_2015_2039_bio/zvhrcp45.tif")
+zvrcp85 <- raster("C:/CONABIO/CLIMA/LifeZones/LZ_R_uniatmos/Resample/HAD_ESM_LR_rcp85_2015_2039_bio/zvhrcp85.tif")
 zv <- raster("C:/CONABIO/CLIMA/LifeZones/LZ_R_uniatmos/Resample/Presente/zvh.tif")
 
 mexbio2010 <- raster("F:/COBERTURAS/MexBio/MEXBIO_corregido/MEXBIO_2010_gw_pr.tif") #Global Human Footprint 
@@ -92,20 +92,20 @@ m_final85<-rename(m_final85, c(m_final.LatReg_P...m_final.LatReg_85="Lat.vec85",
 #Identificar zonas de clima estable (suma.vec45 = 0)
 estables45 <-subset(m_final45, suma.vec45 == 0)
 estables45 <-estables45[,1:7]
-write.csv(estables45,"Resample/CNRMCM5_rcp45_2015_2039_bio/estables45.csv")
+write.csv(estables45,"Resample/HAD_ESM_LR_rcp45_2015_2039_bio/estables45.csv")
 estables85 <-subset(m_final85, suma.vec85 == 0) 
 estables85 <-estables85[,1:7]
-write.csv(estables45,"Resample/CNRMCM5_rcp45_2015_2039_bio/estables85.csv")
+write.csv(estables45,"Resample/HAD_ESM_LR_rcp85_2015_2039_bio/estables85.csv")
 
 #Identificar zonas de clima que cambian (suma.vec45 != 0)
 cambio45 <-subset(m_final45, suma.vec45 != 0)
 cambio.45select<-c("x","y","MEXBIO_2010_gw_pr","zvh","zvhrcp45",
                   "ecoregiones","Lat.vec45","Ppt.vec45","Phum45.vec","suma.vec45")
 cambio45<-cambio45[cambio.45select]
-write.csv(cambio45,"Resample/CNRMCM5_rcp45_2015_2039_bio/cambio45.csv")
+write.csv(cambio45,"Resample/HAD_ESM_LR_rcp45_2015_2039_bio/cambio45.csv")
 
 cambio85 <-subset(m_final85, suma.vec85 != 0) 
 cambio.85select<-c("x","y","MEXBIO_2010_gw_pr","zvh","zvhrcp85",
                    "ecoregiones","Lat.vec85","Ppt.vec85","Phum85.vec","suma.vec85")
 cambio85<-cambio85[cambio.85select]
-write.csv(cambio85,"Resample/CNRMCM5_rcp45_2015_2039_bio/cambio85.csv")
+write.csv(cambio85,"Resample/HAD_ESM_LR_rcp85_2015_2039_bio/cambio85.csv")

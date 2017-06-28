@@ -38,13 +38,13 @@ alto.mexbio.estables45<-rbind(GP_estables45.mexbio,DAN_estables45.mexbio,
                          CM_estables45.mexbio,ESM_estables45.mexbio,
                          ST_estables45.mexbio,SCS_estables45.mexbio,
                          SCH_estables45.mexbio)
-write.csv(alto.mexbio.estables45, "Resample/MPI_ESM_LR_rcp45_2075_2099_bio/alto_mexbio_estables45.csv")
+write.csv(alto.mexbio.estables45, "Resample/HAD_ESM_LR_rcp45_2015_2039_bio/alto_mexbio_estables45.csv")
 
 alto.mexbio.cambio45<-rbind(GP_cambio45.mexbio,DAN_cambio45.mexbio,
                        CM_cambio45.mexbio,ESM_cambio45.mexbio,
                        ST_cambio45.mexbio,SCS_cambio45.mexbio,
                        SCH_cambio45.mexbio)
-write.csv(alto.mexbio.cambio45, "Resample/MPI_ESM_LR_rcp45_2075_2099_bio/alto_mexbio_cambio45.csv")
+write.csv(alto.mexbio.cambio45, "Resample/HAD_ESM_LR_rcp45_2015_2039_bio/alto_mexbio_cambio45.csv")
 
 ####RCP85####
 GP_estables85 <- subset(estables85, ecoregiones == 9)
@@ -87,10 +87,10 @@ alto.mexbio.estables85<-rbind(GP_estables85.mexbio,DAN_estables85.mexbio,
                               CM_estables85.mexbio,ESM_estables85.mexbio,
                               ST_estables85.mexbio,SCS_estables85.mexbio,
                               SCH_estables85.mexbio)
-write.csv(alto.mexbio.estables85, "Resample/MPI_ESM_LR_rcp45_2075_2099_bio/alto_mexbio_estables85.csv")
+write.csv(alto.mexbio.estables85, "Resample/HAD_ESM_LR_rcp85_2015_2039_bio/alto_mexbio_estables85.csv")
 
 alto.mexbio.cambio85<-rbind(GP_cambio85.mexbio,DAN_cambio85.mexbio,
                             CM_cambio85.mexbio,ESM_cambio85.mexbio,
                             ST_cambio85.mexbio,SCS_cambio85.mexbio,
                             SCH_cambio85.mexbio)
-write.csv(alto.mexbio.cambio85, "Resample/MPI_ESM_LR_rcp45_2075_2099_bio/alto_mexbio_cambio85.csv")
+write.csv(alto.mexbio.cambio85, "Resample/HAD_ESM_LR_rcp85_2015_2039_bio/alto_mexbio_cambio85.csv")
