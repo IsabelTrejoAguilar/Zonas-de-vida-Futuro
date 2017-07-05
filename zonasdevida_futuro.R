@@ -22,7 +22,7 @@ alt <-raster("C:/CONABIO/CLIMA/LifeZones/LZ_R_uniatmos/alt//w001001.adf")
 alt
 
 #Current climate
-at_present <- raster("F:/COBERTURAS/UNIATMOS_CCA/Presente/bio1.asc") ##Raster temperature (캜)
+at_present <- raster("F:/COBERTURAS/UNIATMOS_CCA/Presente/bio1.asc") ##Raster temperature (째C)
 at_present
 plot(at_present)
 summary(at_present)
@@ -50,11 +50,11 @@ writeRaster(ap, filename="ap.tif", format="GTiff", overwrite=TRUE)
 ##Calculate lat 
 
 x<-readGDAL("at_present.tif")
-coor<-coordinates(x) #extrae coordenadas x,y del raster
-lat<-coor[,2] #extrae coordenada y
-x_lat<-x #raster de latitud
-x_lat$band1<-lat #sustitucion de values por latitud
-writeGDAL(x_lat,"lat.tif",drivername='GTiff') #raster de latitud
+coor<-coordinates(x) #Extract coordinates "x,y" from raster
+lat<-coor[,2] #Extract coordinate "y"
+x_lat<-x #Raster latitude
+x_lat$band1<-lat #Substitution of values by latitude
+writeGDAL(x_lat,"lat.tif",drivername='GTiff') 
 lat<- raster("lat.tif") ##Raster latitude
 plot(lat)
 
@@ -99,15 +99,15 @@ plot(bio0to30, main = "Bio0to30 Future")
 
 ##The data up to 24.0 need a correction: biot = temperature - [3 * latitudegrade/100) * (temperature - 24)^2
 is.na (biotTem) <- biotTem >= 24.1  
-bio0to24 <- biotTem #areas with less than 24캜
+bio0to24 <- biotTem #areas with less than 24째C
 plot(bio0to24, main = "Bio0to24 Future")
 biotTem <- bio0to30
 plot(biotTem)
 is.na (biotTem) <- biotTem <= 23.9
-bio24to30 <- biotTem #areas with more than 24캜
+bio24to30 <- biotTem #areas with more than 24째C
 plot(bio24to30, main = "Bio24to30 Future")
 bioupto24 <- (bio24to30 - (((3.0 * lat) / 100) * ((bio24to30 - 24.0)^2)))
-plot(bioupto24, main = "Bioupto24 Future") #biotemp of area with more than 24캜
+plot(bioupto24, main = "Bioupto24 Future") #biotemp of area with more than 24째C
 biot <- merge(bioupto24,bio0to24)
 plot(biot, main = "Future Biotemperature")
 writeRaster(biot, filename="biot_future.tif", format="GTiff", overwrite=TRUE)
